@@ -10,7 +10,7 @@ const
 export default class WebRequestProcessor extends abData.RequestProcessor {
     constructor(dataScheme, device, apiUri) {
         super(dataScheme, device);
-        js0.args(arguments, abData.DataScheme, abData.Device, 'string');
+        js0.args(arguments, abData.DataScheme, [ abData.Device, js0.Null ], 'string');
 
         this._apiUri = apiUri;
     }
@@ -21,7 +21,7 @@ export default class WebRequestProcessor extends abData.RequestProcessor {
         let response = new abData.Response();
 
         let result = await webABApi.json_Async(this._apiUri + 'request', { 
-            deviceInfo: {
+            deviceInfo: this.device === null ? null : {
                 deviceId: this.device.id,
                 deviceHash: this.device.hash,
                 declaredItemIds: this.device.declaredItemIds,
