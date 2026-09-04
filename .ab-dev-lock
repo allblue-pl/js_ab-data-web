@@ -1,0 +1,4 @@
+{
+  "type": "link",
+  "hash": "{\"abDependencies\":{\"ab-data\":{\"url\":\"https://github.com/allblue-pl/js_ab-data\",\"branch\":\"main\"},\"web-ab-api\":{\"url\":\"https://github.com/allblue-pl/web-js_web-ab-api\",\"branch\":\"main\"},\"@allblue/ts0\":{\"url\":\"https://github.com/allblue-pl/js_ts0\",\"branch\":\"main\"},\"ab-date\":{\"url\":\"https://github.com/allblue-pl/ab-date\",\"branch\":\"main\"},\"ab-lock\":{\"url\":\"https://github.com/allblue-pl/ab-lock\",\"branch\":\"main\"},\"ab-strings\":{\"url\":\"https://github.com/allblue-pl/ab-strings\",\"branch\":\"main\"},\"ab-text\":{\"url\":\"https://github.com/allblue-pl/ab-text\",\"branch\":\"main\"},\"js0\":{\"url\":\"\",\"branch\":\"main\"}}}"
+}
