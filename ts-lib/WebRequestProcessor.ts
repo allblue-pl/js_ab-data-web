@@ -1,6 +1,7 @@
 import webABApi from "web-ab-api";
 import abData, { DataScheme, Device, RequestProcessor, Response, type Request_Parsed } from "ab-data";
 import type { ResponseData } from "ab-data/ts-lib/Response.ts";
+import { ts0IsRawObject } from "@allblue/ts0";
 
 export default class WebRequestProcessor extends RequestProcessor {
     #apiUri: string;
@@ -26,6 +27,24 @@ export default class WebRequestProcessor extends RequestProcessor {
             requests: requests,
             args: {},
         });
+
+        if (result.data !== null) {
+            let responseData = result.data.response;
+            if (ts0IsRawObject(responseData)) {
+                if ("info" in responseData) {
+                    if (ts0IsRawObject(responseData.info))
+                        delete responseData.info._stdObj;
+                }
+                if ("results" in responseData) {
+                    if (ts0IsRawObject(responseData.results))
+                        delete responseData.results._stdObj;
+                }
+                if ("actionErrors" in responseData) {
+                    if (ts0IsRawObject(responseData.actionErrors))
+                        delete responseData.actionErrors._stdObj;
+                }
+            }
+        }
 
         response.setInfo({
             webResult: result,
