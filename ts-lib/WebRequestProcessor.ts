@@ -14,7 +14,7 @@ export default class WebRequestProcessor extends RequestProcessor {
         this.#device = device;
     }
 
-    async __processRequestBatch_Async(requests: Array<Request_Parsed>, 
+    override async __processRequestBatch_Async(requests: Array<Request_Parsed>, 
             transactionId: number|null): Promise<Response> {
         let response = new Response();
 
